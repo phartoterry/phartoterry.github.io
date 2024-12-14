@@ -1,6 +1,6 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 html, body, .container, .row {
@@ -12,16 +12,17 @@ html, body, .container, .row {
 
 .container {
     max-width: 100%;
+    height: 100%;
 }
 
 button {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .half {
     position: fixed;
     margin: 0;
-    width: 50% !important;
+    width: 60% !important;
     height: 100%;
 }
 
@@ -32,28 +33,26 @@ button {
 
 .form {
     left: 50%;
-    overflow: auto;
+    /* overflow: auto; */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
-h1, form {
-    width: 100%;
-}
-
-h1 {
-    padding-top: 16px;
-    text-align: center;
+#form-container {
+    justify-items: center;
+    align-items: center;
+    width: 50%;
 }
 
 span {
     display: block;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    font-size: 28px;
-
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 form {
@@ -62,16 +61,24 @@ form {
     max-width: 400px;
 }
 
-.input-group {
-    margin-bottom: 30px;
+/* .input-group {
+    margin-bottom: 10px;
+} */
+
+input[type=email], input[type=number], input[type=password], 
+input[type=search], input[type=tel], input[type=text], 
+input[type=url], select, textarea {
+    height: 30px;
+
 }
 
 .radio-group label {
     display: inline-block;
 }
 
-textarea {
-    min-height: 100px;
+/* Hidden and visible styles */
+.hidden {
+    display: none;
 }
 
 @media screen and (max-width: 1024px) {
@@ -81,12 +88,12 @@ textarea {
         height: auto;
     }
 
-    .bg {
-        height: 30vh;
+    .form {
+        position: static;
+        height: auto;
     }
 
-    form {
-        padding-right: 12px;
-        padding-left: 12px;
+    .bg {
+        height: 80vh;
     }
 }

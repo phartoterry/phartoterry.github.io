@@ -36,107 +36,100 @@
       
       <!-- form -->
       <section class="six columns half form">
-        <!-- <h1>王紹宇 Steven & 黃荑 Ti 的婚禮大調查</h1> -->
-        <span>王紹宇 Steven & 黃荑 Ti 的婚禮大調查</span>
-        <form>
-          <!-- 姓名 -->
-          <div class="input-group">
-            <label for="demo_name">尊姓大名</label>
-            <input class="u-full-width" type="text" id="demo_name">
-          </div>
-          
-          <!-- 關係 -->
-          <div class="input-group">
-            <label for="demo_name">您與新人的關係</label>
-            <input class="u-full-width" type="text" id="relation">
-          </div>
-
-          <!-- 請問幾位 -->
-          <div class="input-group">
-            <label for="demo_name">請問幾位</label>
-            <input class="u-full-width" type="text" id="people-number">
-          </div>
-
-          <!-- 是否吃素 -->
-          <div class="input-group">
-            <label>是否吃素</label>
-            <div class="radio-group row">
-              <!-- 是 -->
-              <div class="four columns">
-                <input type="radio" id="yes" name="demo_veg" value="yes">
-                <label for="yes">是</label>
-              </div>
-
-              <!-- 否 -->
-              <div class="four columns">
-                <input type="radio" id="no" name="demo_veg" value="no" checked>
-                <label for="no">否</label>
+        <div id="form-container">
+          <span>Please let us know...</span>
+          <form id="main-form">
+            <!-- 姓名 -->
+            <div class="input-group">
+              <label for="demo_name">您的姓名</label>
+              <input class="u-full-width" type="text" id="demo_name">
+            </div>
+            
+            <!-- 關係 -->
+            <div class="input-group">
+              <label for="demo_name">您與我們的關係</label>
+              <input class="u-full-width" type="text" id="relation">
+            </div>
+  
+            <!-- 請問幾位 -->
+            <div class="input-group">
+              <label for="demo_name">出席幾位</label>
+              <input class="u-full-width" type="text" id="people-number">
+            </div>
+  
+            <!-- 是否吃素 -->
+            <div class="input-group">
+              <label>是否吃素</label>
+              <div class="radio-group row">
+                <!-- 是 -->
+                <div class="two columns">
+                  <input type="radio" id="yes" name="demo_veg" value="yes">
+                  <label for="yes">是</label>
+                </div>
+  
+                <!-- 否 -->
+                <div class="two columns">
+                  <input type="radio" id="no" name="demo_veg" value="no" checked>
+                  <label for="no">否</label>
+                </div>
               </div>
             </div>
-          </div>
-
-          <!-- 是否需要兒童椅 -->
-          <div class="input-group">
-            <label>是否需要兒童椅</label>
-            <div class="radio-group row">
-              <!-- 是 -->
-              <div class="four columns">
-                <input type="radio" id="yes" name="demo_child_chair" value="yes">
-                <label for="yes">是</label>
-              </div>
-
-              <!-- 否 -->
-              <div class="four columns">
-                <input type="radio" id="no" name="demo_child_chair" value="no" checked>
-                <label for="no">否</label>
-              </div>
-            </div>
-          </div>
-
-          <!-- 是否需要寄送喜帖 -->
-          <div class="input-group">
-            <label>是否需要寄送喜帖</label>
-            <div class="radio-group row">
-              <!-- 是 -->
-              <div class="four columns">
-                <input type="radio" id="yes" name="demo_invitation" value="yes">
-                <label for="yes">是</label>
-              </div>
-
-              <!-- 否 -->
-              <div class="four columns">
-                <input type="radio" id="no" name="demo_invitation" value="no" checked>
-                <label for="no">否</label>
+  
+            <!-- 是否需要兒童椅 -->
+            <div class="input-group">
+              <label>是否需要兒童椅</label>
+              <div class="radio-group row">
+                <!-- 是 -->
+                <div class="two columns">
+                  <input type="radio" id="yes" name="demo_child_chair" value="yes">
+                  <label for="yes">是</label>
+                </div>
+  
+                <!-- 否 -->
+                <div class="two columns">
+                  <input type="radio" id="no" name="demo_child_chair" value="no" checked>
+                  <label for="no">否</label>
+                </div>
               </div>
             </div>
-          </div>
-
+  
+            <!-- 是否需要寄送喜帖 -->
+            <div class="input-group">
+              <label>是否需要寄送喜帖</label>
+              <div class="radio-group row">
+                <!-- 是 -->
+                <div class="two columns">
+                  <input type="radio" id="yes" name="demo_invitation" value="yes">
+                  <label for="yes">是</label>
+                </div>
+  
+                <!-- 否 -->
+                <div class="two columns">
+                  <input type="radio" id="no" name="demo_invitation" value="no" checked>
+                  <label for="no">否</label>
+                </div>
+              </div>
+            </div>
+  
             <!-- 電子郵件 -->
             <div class="input-group">
-                <label for="demo_email">電子郵件</label>
+                <label for="demo_email">Email</label>
                 <input class="u-full-width" type="email" id="demo_email">
             </div>
-
-          <!-- 詢問類別 -->
-          <!-- <div class="input-group">
-            <label for="demo_select">詢問類別</label>
-            <select class="u-full-width" id="demo_select">
-              <option value="0" value="0" selected disabled>請選擇</option>
-              <option value="cat">貓類</option>
-              <option value="dog">狗類</option>
-              <option value="bear">熊類</option>
-            </select>
-          </div> -->
-
-          <!-- 詢問內容 -->
-          <!-- <div class="input-group">
-            <label for="demo_textarea">詢問內容</label>
-            <textarea class="u-full-width" id="demo_textarea"></textarea>
-          </div> -->
-
-          <button type="button" id="submit" class="button-primary u-full-width">確認送出</button>
-
-        </form>
+  
+            <button type="button" id="submit" class="button-primary u-full-width">送</button>
+          </form>
+          
+          <div id="loader" class="hidden btn btn-inside btn-boarder">
+            <img src="https://i.cloudup.com/gBzAn-oW_S-2000x2000.png" width="64px" height="64px" id="plane">
+          </div>
+          <div id="success" class="hidden">
+            <img src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png" id="check" width="32px" height="32px" style="opacity:0;">
+            <div class="around around-boarder"></div>
+            <button type="button" id="return" class="button-primary u-full-width">返回填寫</button>
+          </div>
+        </div>
+        
       </section>
     </main>
   </div>

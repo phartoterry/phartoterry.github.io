@@ -1,6 +1,19 @@
 $(function() {
     $('#submit').on('click', function() {
       
+      // Show loader animation
+      $('#main-form').addClass('hidden');
+      $('#loader').removeClass('hidden');
+      $('#plane').addClass('animation');
+
+      // Simulate form submission delay
+      setTimeout(function () {
+        $('#loader').addClass('hidden');
+        $('#success').removeClass('hidden');
+        $('#plane').removeClass('animation');
+        $('#check').addClass('animation2');
+      }, 3000);
+
       // 姓名
       var name = $('#demo_name').val() || '未填寫';
 
@@ -37,8 +50,16 @@ $(function() {
         contentType: 'application/json',
         dataType: 'jsonp',
         complete: function() {
-          alert('資料已送出！');
+          console.log('資料已送出！');
         }
+      });
+
+      $('#return').on('click', function () {
+        // Reset form and switch back to input view
+        $('#success').addClass('hidden');
+        $('#check').removeClass('animation2');
+        $('#main-form').removeClass('hidden');
+        $('#main-form')[0].reset();
       });
       
     });
