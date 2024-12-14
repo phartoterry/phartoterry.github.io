@@ -43,7 +43,7 @@ button {
 
 #form-container {
     justify-items: center;
-    align-items: center;
+    align-content: center;
     width: 50%;
 }
 
@@ -60,10 +60,6 @@ form {
     margin-left: auto;
     max-width: 400px;
 }
-
-/* .input-group {
-    margin-bottom: 10px;
-} */
 
 input[type=email], input[type=number], input[type=password], 
 input[type=search], input[type=tel], input[type=text], 
@@ -82,6 +78,7 @@ input[type=url], select, textarea {
 }
 
 @media screen and (max-width: 1024px) {
+
     .half {
         position: static;
         width: 100% !important;
@@ -89,11 +86,105 @@ input[type=url], select, textarea {
     }
 
     .form {
-        position: static;
-        height: auto;
+        padding: 1rem;
+        justify-content: center;
+        align-items: center;
     }
 
     .bg {
-        height: 80vh;
+        height: 45%;
+    }
+
+    span {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    form {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    .input-group {
+        margin-bottom: 0.8em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Make the form container and its elements fit smaller screens */
+    .half {
+        position: static;
+        width: 100% !important;
+        height: auto;
+    }
+
+    .form {
+        padding: 1rem;
+    }
+  
+    span {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .bg {
+        height: 30%;
+    }
+  
+    form {
+        width: 100%;
+        padding: 0 1rem;
+    }
+  
+    button {
+        font-size: 14px;
+    }
+  
+    .input-group {
+        margin-bottom: 0.8em;
+    }
+  
+    .radio-group .columns {
+        width: 50%; /* Make radio buttons side-by-side */
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .half {
+        position: static;
+        width: 100% !important;
+        height: auto;
+    }
+    
+    .form {
+        padding: 1rem;
+    }
+
+    .bg {
+        height: 30%;
+    }
+
+    span {
+        font-size: 16px;
+    }
+    form {
+        width: 100%;
+        padding: 0 1rem;
+    }
+    button {
+        font-size: 14px;
+    }
+    .input-group {
+        margin-bottom: 0.8em;
+    }
+    .radio-group .columns {
+        width: 50%; /* Make radio buttons side-by-side */
+        margin-left: 0;
     }
 }
