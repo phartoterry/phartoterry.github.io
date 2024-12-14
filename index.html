@@ -1,27 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit to Google Sheet</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>王紹宇 Steven & 黃荑 Ti 的婚禮大調查</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-N97VV92M');
+  </script>
+  <!-- End Google Tag Manager -->
+
 </head>
 <body>
-    <form id="dataForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea><br><br>
-        
-        <button type="button" onclick="submitData()">Submit</button>
-    </form>
 
-    <p id="response"></p>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N97VV92M"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <script src="submit.js"></script>
+  <div class="container">
+    <main class="row">
+      <!-- bg -->
+      <section class="six columns half bg"></section>
+      
+      <!-- form -->
+      <section class="six columns half form">
+        <!-- <h1>王紹宇 Steven & 黃荑 Ti 的婚禮大調查</h1> -->
+        <span>王紹宇 Steven & 黃荑 Ti 的婚禮大調查</span>
+        <form>
+          <!-- 姓名 -->
+          <div class="input-group">
+            <label for="demo_name">尊姓大名</label>
+            <input class="u-full-width" type="text" id="demo_name">
+          </div>
+          
+          <!-- 關係 -->
+          <div class="input-group">
+            <label for="demo_name">您與新人的關係</label>
+            <input class="u-full-width" type="text" id="relation">
+          </div>
+
+          <!-- 請問幾位 -->
+          <div class="input-group">
+            <label for="demo_name">請問幾位</label>
+            <input class="u-full-width" type="text" id="people-number">
+          </div>
+
+          <!-- 是否吃素 -->
+          <div class="input-group">
+            <label>是否吃素</label>
+            <div class="radio-group row">
+              <!-- 是 -->
+              <div class="four columns">
+                <input type="radio" id="yes" name="demo_veg" value="yes">
+                <label for="yes">是</label>
+              </div>
+
+              <!-- 否 -->
+              <div class="four columns">
+                <input type="radio" id="no" name="demo_veg" value="no" checked>
+                <label for="no">否</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 是否需要兒童椅 -->
+          <div class="input-group">
+            <label>是否需要兒童椅</label>
+            <div class="radio-group row">
+              <!-- 是 -->
+              <div class="four columns">
+                <input type="radio" id="yes" name="demo_child_chair" value="yes">
+                <label for="yes">是</label>
+              </div>
+
+              <!-- 否 -->
+              <div class="four columns">
+                <input type="radio" id="no" name="demo_child_chair" value="no" checked>
+                <label for="no">否</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 是否需要寄送喜帖 -->
+          <div class="input-group">
+            <label>是否需要寄送喜帖</label>
+            <div class="radio-group row">
+              <!-- 是 -->
+              <div class="four columns">
+                <input type="radio" id="yes" name="demo_invitation" value="yes">
+                <label for="yes">是</label>
+              </div>
+
+              <!-- 否 -->
+              <div class="four columns">
+                <input type="radio" id="no" name="demo_invitation" value="no" checked>
+                <label for="no">否</label>
+              </div>
+            </div>
+          </div>
+
+            <!-- 電子郵件 -->
+            <div class="input-group">
+                <label for="demo_email">電子郵件</label>
+                <input class="u-full-width" type="email" id="demo_email">
+            </div>
+
+          <!-- 詢問類別 -->
+          <!-- <div class="input-group">
+            <label for="demo_select">詢問類別</label>
+            <select class="u-full-width" id="demo_select">
+              <option value="0" value="0" selected disabled>請選擇</option>
+              <option value="cat">貓類</option>
+              <option value="dog">狗類</option>
+              <option value="bear">熊類</option>
+            </select>
+          </div> -->
+
+          <!-- 詢問內容 -->
+          <!-- <div class="input-group">
+            <label for="demo_textarea">詢問內容</label>
+            <textarea class="u-full-width" id="demo_textarea"></textarea>
+          </div> -->
+
+          <button type="button" id="submit" class="button-primary u-full-width">確認送出</button>
+
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="script.js"></script>
+  
 </body>
 </html>
