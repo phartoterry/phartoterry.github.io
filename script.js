@@ -3,43 +3,49 @@ $(function() {
       
       // Show loader animation
       $('#main-form').addClass('hidden');
+      $('#title').addClass('hidden');
       $('#loader').removeClass('hidden');
-
-      // Simulate form submission delay
-      setTimeout(function () {
-        $('#loader').addClass('hidden');
-        $('#success').removeClass('hidden');
-      }, 3000);
+      $('#thanks-msg').removeClass('hidden');
+      $('#success').removeClass('hidden');
 
       // 姓名
       var name = $('#demo_name').val() || '未填寫';
 
       var relation = $('#relation').val() || '未填寫';
 
-      var num = $('#people-number').val() || '未填寫';
+      var num_people = $('#people-number').val() || '未填寫';
 
-      // 電子郵件
-      var mail = $('#demo_email').val() || '未填寫';
+      // Vegetarian number
+      var num_vegetarian = $('#demo_vegetarian').val() || '未填寫';
 
-      // vegetarian radio check
-      var is_vegetarian = $('[name="demo_veg"]').prop('checked') ? '是' : '否';
-
-      // need_child_seat radio check
-      var need_child_seat = $('[name="demo_child_chair"]').prop('checked') ? '是' : '否';
+      // Child seat number
+      var num_child_seat = $('#demo_child_seat').val() || '未填寫';
 
       // need_invitation radio check
-      var need_invitation = $('[name="demo_invitation"]').prop('checked') ? '是' : '否';
+      var invitaiton_type = $('input[name="demo_invitation"]:checked').val() || '未填寫';
+
+      // Email for electronic invitation
+      var mail = $('#demo_email').val() || '無';
+
+      // Address for paper invitation
+      var address = $('#demo_address').val() || '無';
+
+      // Message
+      var messages = $('#demo_message').val() || '無';
 
       // post
       var data = {
         'entry.2011968773': name,
         'entry.1537783585': relation,
-        'entry.999905413': num,
+        'entry.999905413': num_people,
+        'entry.1476509680' : num_vegetarian,
+        'entry.1197285354': num_child_seat,
         'entry.1953885259': mail,
-        'entry.1476509680': is_vegetarian,
-        'entry.1197285354': need_child_seat,
-        'entry.955700446': need_invitation, 
+        'entry.589875455': address,
+        'entry.686852954': messages,
+        'entry.955700446': invitaiton_type
       };
+      
       $.ajax({
         type: 'POST',
         url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeyaMygKukmQTOcMA9hhXEOJse9a3lKdGAVSL2fXop38rDEOA/formResponse',
@@ -53,10 +59,33 @@ $(function() {
 
       $('#return').on('click', function () {
         // Reset form and switch back to input view
+        $('#loader').addClass('hidden');
+        $('#thanks-msg').addClass('hidden');
         $('#success').addClass('hidden');
         $('#main-form').removeClass('hidden');
+        $('#title').removeClass('hidden');
         $('#main-form')[0].reset();
       });
       
+    });
+
+    $('#paper').on('click', function() {
+      $('#need-paper').removeClass('hidden-address');
+      $('#need-electronic').addClass('hidden-email');
+    });
+
+    $('#electronic').on('click', function() {
+      $('#need-paper').addClass('hidden-address');
+      $('#need-electronic').removeClass('hidden-email');
+    });
+
+    $('#both').on('click', function() {
+      $('#need-paper').removeClass('hidden-address');
+      $('#need-electronic').removeClass('hidden-email');
+    });
+
+    $('#none').on('click', function() {
+      $('#need-paper').addClass('hidden-address');
+      $('#need-electronic').addClass('hidden-email');
     });
 });

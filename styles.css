@@ -22,19 +22,18 @@ button {
 .half {
     position: fixed;
     margin: 0;
-    width: 60% !important;
+    width: 50% !important;
     height: 100%;
 }
 
 .bg {
-    background: url('images/bg.jpg') center center;
+    background: url('images/bg2.jpg') center center;
     background-size: cover;
 }
 
 .form {
     left: 50%;
-    /* overflow: auto; */
-    overflow: hidden;
+    overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,6 +52,18 @@ span {
     margin-top: 10px;
     font-size: 20px;
     font-weight: bold;
+}
+
+#attend {
+    margin-bottom: 0;
+}
+
+#comment {
+    font-size: 10px;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 10px;
+    justify-content: left;
 }
 
 form {
@@ -75,6 +86,77 @@ input[type=url], select, textarea {
 /* Hidden and visible styles */
 .hidden {
     display: none;
+}
+
+.hidden-email {
+    display: none;
+}
+
+.hidden-address {
+    display: none;
+}
+
+.after-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Animate after-submit elements */
+#thanks-msg {
+  position: relative;
+  top: -50%;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  animation: slide-in 1s ease-in-out;
+}
+
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#loader img {
+  width: 50px;
+  height: 50px;
+  animation: slide-in 1s ease-in-out;
+}
+
+#success button {
+  opacity: 0;
+  animation: pop-out 0.5s ease-in-out 1s forwards;
+}
+
+/* Keyframe animations */
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop-out {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hidden classes */
+.hidden {
+  display: none !important;
 }
 
 @media screen and (max-width: 1024px) {
