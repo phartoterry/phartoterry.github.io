@@ -42,7 +42,7 @@ form {
     left: 50%;
     overflow: auto;
     display: flex;
-    justify-content: top;
+    justify-items: center;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
@@ -86,34 +86,6 @@ form {
     outline: 0;
     transition: .2s;
 }
-  
-.form-field:focus {
-    border-color: #0f7ef1;
-}
-
-.form-field:valid {
-    border-color: forestgreen;
-}
-
-.form-field:valid + .icon::after {
-    content: '😃';
-}
-
-.form-field:invalid {
-    border-color: firebrick;
-}
-
-.form-field:invalid + .icon::after {
-    content: '😳';
-}
-
-#main-form {
-    width: 100%;
-    padding: 2em;
-    /* background: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-}
 
 span {
     margin-bottom: 1em;
@@ -124,37 +96,40 @@ span {
     font-weight: bold;
 }
 
-button {
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto; /* Push the button to the bottom */
+    padding-top: 1em; /* Add spacing above the button */
+    width: 100%;
+}
+
+#submit, #return {
     width: 150px;
     padding: 12px 10px;
     border: 0;
-    background: linear-gradient(to right, #2b2b2b 0%,#4d4d4d 50%, #6b6b6b 100%); 
+    background: linear-gradient(to right, #FF0000 0%, #ff9b28 100%);
     border-radius: 50px;
-    margin-top: 10px;
     color: #fff;
     letter-spacing: 1px;
     font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#submit:hover {
+    background: linear-gradient(to right, #ff9b28 0%, #FF0000 100%);
+}
+
+#return:hover {
+    background: linear-gradient(to right, #ff9b28 0%, #FF0000 100%);
 }
 
 
-#submit:hover img {
-    right: 80px;
-    bottom: 15px;
-    width: fit-content;
-    opacity: 1;
-    transform: translateX(50px);
-}
-
-#arrow-hover {
-    width: 20px;
-    height: 15px;
-    position: absolute;
-    transform: translateX(60px);
-    opacity: 0;
-    -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
-    transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
-    margin: 0;
-    padding: 0 5px;
+#main-form {
+    width: 100%;
+    padding: 2em;
 }
 
 #comment {
@@ -241,43 +216,43 @@ input[type=url], select, textarea {
     animation-name: move;
     animation-duration: .4s;
     animation-fill-mode: both;
-    animation-delay: 2s;
+    animation-delay: 0.8s;
 }
 
 .a1 {
-    animation-delay: 2s;
+    animation-delay: 0.8s;
 }
 
 .a2 {
-    animation-delay: 2.1s;
+    animation-delay: 0.9s;
 }
 
 .a3 {
-    animation-delay: 2.2s;
+    animation-delay: 1s;
 }
 
 .a4 {
-    animation-delay: 2.3s;
+    animation-delay: 1.1s;
 }
 
 .a5 {
-    animation-delay: 2.4s;
+    animation-delay: 1.2s;
 }
 
 .a6 {
-    animation-delay: 2.5s;
+    animation-delay: 1.3s;
 }
 
 .a7 {
-    animation-delay: 2.6s;
+    animation-delay: 1.4s;
 }
 
 .a8 {
-    animation-delay: 2.7s;
+    animation-delay: 1.5s;
 }
 
 .a9 {
-    animation-delay: 2.8s;
+    animation-delay: 1.6s;
 }
 
 @keyframes move {
@@ -349,6 +324,10 @@ input[type=url], select, textarea {
     .input-group {
         margin-bottom: 0.8em;
     }
+
+    #thanks-msg img {
+        overflow-x: hidden;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -391,6 +370,12 @@ input[type=url], select, textarea {
         width: 50%; /* Make radio buttons side-by-side */
         margin-left: 0;
     }
+
+    #thanks-msg img {
+        height: 80px;
+        width: auto;
+        overflow-x: hidden;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -427,5 +412,11 @@ input[type=url], select, textarea {
     .radio-group .columns {
         width: 50%; /* Make radio buttons side-by-side */
         margin-left: 0;
+    }
+
+    #thanks-msg img {
+        height: 80px;
+        width: auto;
+        overflow-x: hidden;
     }
 }
