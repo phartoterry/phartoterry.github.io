@@ -5,73 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>王紹宇 Steven & 黃荑 Ti 的婚禮大調查</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-N97VV92M');
-  </script>
-  <!-- End Google Tag Manager -->
-
 </head>
 <body>
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N97VV92M"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <div class="container">
     <main class="row">
       <!-- bg -->
-      <section class="six columns half bg"></section>
+      <section class="columns half bg"></section>
       
       <!-- form -->
-      <section class="six columns half form">
+      <section class="columns half form">
         <div id="form-container">
-          <span id="title">Please let us know...</span>
+          <span class="animation a1" id="title"><img src="images/form_title.jpg" alt="form title" height="150px" width="auto"></span>
           <form id="main-form">
             <!-- 姓名 -->
-            <div class="input-group">
+            <div class="input-group animation a2">
               <label for="demo_name">您的姓名</label>
-              <input class="u-full-width" type="text" id="demo_name">
+              <input class="form-field" type="text" id="demo_name" required>
+              <span class="icon"></span>
             </div>
             
             <!-- 關係 -->
-            <div class="input-group">
+            <div class="input-group animation a3">
               <label for="demo_name">您與我們的關係</label>
-              <input class="u-full-width" type="text" id="relation">
+              <input class="form-field" type="text" id="relation" required>
+              <span class="icon"></span>
             </div>
   
             <!-- 請問幾位 -->
-            <div class="input-group">
-              <label id="attend" for="demo_name">出席幾位</label>
-              <span id="comment">記得把自己算進去呦</span>
-              <input class="u-full-width" type="text" id="people-number">
+            <div class="input-group animation a4">
+              <label id="attend" for="demo_name">出席幾位 <small id="comment">記得把自己算進去呦</small></label>
+              <input class="form-field" type="text" id="people-number" pattern="[0-9]{1,3}" required>
+              <span class="icon"></span>
             </div>
   
             <!-- 是否吃素 -->
-            <div class="input-group">
+            <div class="input-group animation a5">
               <label>吃素的人數</label>
-              <input class="u-full-width" type="text" id="demo_vegetarian">
+              <input class="form-field" type="text" id="demo_vegetarian" pattern="[0-9]{1,3}" required>
+              <span class="icon"></span>
             </div>
   
             <!-- 是否需要兒童椅 -->
-            <div class="input-group">
+            <div class="input-group animation a6">
               <label>需要幾張兒童椅</label>
-              <input class="u-full-width" type="text" id="demo_child_seat">
+              <input class="form-field" type="text" id="demo_child_seat" pattern="[0-9]{1,3}" required>
+              <span class="icon"></span>
             </div>
   
             <!-- 是否需要寄送喜帖 -->
-            <div class="input-group">
+            <div class="input-group animation a7">
               <label>您想要紙本喜帖或是電子喜帖</label>
               <div class="radio-group row">
                 <!-- 紙本喜帖 -->
@@ -103,29 +87,34 @@
             <!-- 電子郵件 -->
             <div class="input-group hidden-email" id="need-electronic">
                 <label for="demo_email">聯絡Email</label>
-                <input class="u-full-width" type="email" id="demo_email">
+                <input class="form-field" type="email" id="demo_email">
             </div>
 
             <!-- 地址 -->
             <div class="input-group hidden-address" id="need-paper">
-              <label for="demo_address">地址</label>
-              <input class="u-full-width" type="text" id="demo_address">
+                <label for="demo_address">地址</label>
+                <input class="form-field" type="text" id="demo_address">
             </div>
 
             <!-- 想對我們說的話 -->
-            <div class="input-group">
+            <div class="input-group animation a8">
               <label for="demo_message">想對我們說的話</label>
-              <input class="u-full-width" type="text" id="demo_message"></input>
+              <input class="form-field" type="text" id="demo_message"></input>
+              <span class="icon"></span>
             </div>
-  
-            <button type="button" id="submit" class="button-primary u-full-width">送</button>
+            
           </form>
-
+          <button type="button" id="submit" class="animation a9">
+            送出<img id="arrow-hover" src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-paper-plane-1-120.png?raw=true"/>
+          </button>
+          
           <div class="after-submit">
             <div id="loader" class="hidden">
-              <img src="images/success.jpg" width="64px" height="64px" id="Steven">
+              <img src="images/success2.jpg" width="128px" height="auto" alt="Steven">
             </div>
-            <span id="thanks-msg" class="hidden">謝謝您的填寫</span>
+            <div id="thanks-msg" class="hidden">
+              <img src="images/seeyouthen.jpg" height="100px" width="auto" alt="see you then">
+            </div>
             <div id="success" class="hidden">
               <button type="button" id="return" class="button-primary u-full-width">返回填寫</button>
             </div>
@@ -138,7 +127,7 @@
     </main>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
   <script src="script.js"></script>
   
 </body>

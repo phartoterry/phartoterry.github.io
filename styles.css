@@ -15,10 +15,6 @@ html, body, .container, .row {
     height: 100%;
 }
 
-button {
-    font-size: 14px;
-}
-
 .half {
     position: fixed;
     margin: 0;
@@ -27,35 +23,138 @@ button {
 }
 
 .bg {
-    background: url('images/bg2.jpg') center center;
+    background: url('images/bg4.jpg') ;
     background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 400px;
 }
 
 .form {
     left: 50%;
     overflow: auto;
     display: flex;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 #form-container {
+    margin-top: 8em;
+    margin-bottom: 8em;
     justify-items: center;
+    align-items: center;
+    justify-content: top;
     align-content: center;
-    width: 50%;
+    width: 70%;
+}
+
+.input-group {
+    display: inline-flex;
+    flex-direction: column;
+    margin-bottom: 0.8em;
+    position: relative;
+}
+
+.input-group label {
+    margin-bottom: 0.4em;
+    color: #333;
+}
+
+.input-group .icon {
+    position: absolute;
+    right: 0.5em;
+    top: 30%;
+    transform: translateY(-50%)
+}
+
+.form-field {
+    height: 46px;
+    padding: 0 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
+    outline: 0;
+    transition: .2s;
+}
+  
+.form-field:focus {
+    border-color: #0f7ef1;
+}
+
+.form-field:valid {
+    border-color: forestgreen;
+}
+
+.form-field:valid + .icon::after {
+    content: '😃';
+}
+
+.form-field:invalid {
+    border-color: firebrick;
+}
+
+.form-field:invalid + .icon::after {
+    content: '😳';
+}
+
+#main-form {
+    width: 100%;
+    padding: 2em;
+    /* background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 span {
-    display: block;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     font-size: 20px;
     font-weight: bold;
 }
 
-#attend {
-    margin-bottom: 0;
+button {
+    width: 150px;
+    padding: 12px 10px;
+    border: 0;
+    background: linear-gradient(to right, #2b2b2b 0%,#4d4d4d 50%, #6b6b6b 100%); 
+    border-radius: 50px;
+    margin-top: 10px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+#submit:hover img {
+    right: 80px;
+    bottom: 15px;
+    width: fit-content;
+    opacity: 1;
+    transform: translateX(50px);
+}
+
+#arrow-hover {
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    transform: translateX(60px);
+    opacity: 0;
+    -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
+    transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
+    margin: 0;
+    padding: 0 5px;
 }
 
 #comment {
@@ -66,17 +165,14 @@ span {
     justify-content: left;
 }
 
-form {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 400px;
-}
-
 input[type=email], input[type=number], input[type=password], 
 input[type=search], input[type=tel], input[type=text], 
 input[type=url], select, textarea {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     height: 30px;
-
 }
 
 .radio-group label {
@@ -98,7 +194,7 @@ input[type=url], select, textarea {
 
 .after-submit {
     display: flex;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
@@ -106,24 +202,10 @@ input[type=url], select, textarea {
 
 /* Animate after-submit elements */
 #thanks-msg {
-  position: relative;
-  top: -50%;
-  text-align: center;
-  font-size: 24px;
-  color: #333;
   animation: slide-in 1s ease-in-out;
 }
 
-#loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
 #loader img {
-  width: 50px;
-  height: 50px;
   animation: slide-in 1s ease-in-out;
 }
 
@@ -155,6 +237,76 @@ input[type=url], select, textarea {
   }
 }
 
+.animation {
+    animation-name: move;
+    animation-duration: .4s;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+}
+
+.a1 {
+    animation-delay: 2s;
+}
+
+.a2 {
+    animation-delay: 2.1s;
+}
+
+.a3 {
+    animation-delay: 2.2s;
+}
+
+.a4 {
+    animation-delay: 2.3s;
+}
+
+.a5 {
+    animation-delay: 2.4s;
+}
+
+.a6 {
+    animation-delay: 2.5s;
+}
+
+.a7 {
+    animation-delay: 2.6s;
+}
+
+.a8 {
+    animation-delay: 2.7s;
+}
+
+.a9 {
+    animation-delay: 2.8s;
+}
+
+@keyframes move {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+@keyframes left {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    100% {
+        opacity: 1;
+        padding: 20px 40px;
+        width: 440px;
+    }
+}
+
 /* Hidden classes */
 .hidden {
   display: none !important;
@@ -175,7 +327,9 @@ input[type=url], select, textarea {
     }
 
     .bg {
-        height: 45%;
+        height: 100%;
+        background-position: bottom center;
+        background-repeat: no-repeat;
     }
 
     span {
@@ -215,7 +369,9 @@ input[type=url], select, textarea {
     }
 
     .bg {
-        height: 30%;
+        height: 100%;
+        background-position: bottom center;
+        background-repeat: no-repeat;
     }
   
     form {
@@ -250,7 +406,9 @@ input[type=url], select, textarea {
     }
 
     .bg {
-        height: 30%;
+        height: 90%;
+        background-position: bottom center;
+        background-repeat: no-repeat;
     }
 
     span {
