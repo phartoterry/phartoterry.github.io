@@ -127,19 +127,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Gather form data
     const data = {
-      'entry.826151329': document.getElementById('demo_name').value.trim(),
-      'entry.1885566535': document.getElementById('relation').value.trim(),
-      'entry.1749820725': document.getElementById('people-number').value.trim(),
-      'entry.1204783302': document.getElementById('demo_vegetarian').value.trim(),
-      'entry.214182809': document.getElementById('demo_child_seat').value.trim(),
-      'entry.143865939': document.getElementById('demo_email').value.trim(),
-      'entry.1840319126': document.getElementById('demo_address').value.trim(),
-      'entry.728572343': document.getElementById('demo_message').value.trim(),
-      'entry.881111873': document.querySelector('input[name=\"demo_invitation\"]:checked')?.value || '未填寫'
+      'entry.463743869': document.getElementById('demo_name').value.trim(),
+      'entry.751692474': document.getElementById('relation').value.trim(),
+      'entry.1529339822': document.getElementById('people-number').value.trim(),
+      'entry.1149959926': document.getElementById('demo_vegetarian').value.trim(),
+      'entry.1016359044': document.getElementById('demo_child_seat').value.trim(),
+      'entry.1820708072': document.getElementById('demo_email').value.trim(),
+      'entry.1272793801': document.getElementById('demo_address').value.trim(),
+      'entry.2106035706': document.getElementById('demo_message').value.trim(),
+      'entry.684467016': document.querySelector('input[name=\"demo_invitation\"]:checked')?.value || '未填寫'
     };
 
     // Send the data using fetch
-    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSe84JXLpaA166UxkcTFAGIp6LNLxVaFlSH6oRM-1fd-E4qD7Q/formResponse', {
+    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLScal-z5FG2j8EqZHcEpY-RKTOjx9IFNqYbLJLmSerEq7jpHAQ/formResponse', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
