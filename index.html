@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>王紹宇 Steven & 黃荑 Ti 的婚禮大調查</title>
+  <title>王紹宇 Steven & 黃荑 Ti 的婚禮調查</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,42 +21,37 @@
           <form id="main-form">
             <!-- 姓名 -->
             <div class="input-group animation a2">
-              <label for="demo_name">您的姓名</label>
+              <label for="demo_name">您的姓名*</label>
               <input class="form-field" type="text" id="demo_name" required>
-              <span class="icon"></span>
             </div>
             
             <!-- 關係 -->
             <div class="input-group animation a3">
-              <label for="demo_name">您與我們的關係</label>
+              <label for="relation">您與我們的關係*</label>
               <input class="form-field" type="text" id="relation" required>
-              <span class="icon"></span>
             </div>
   
             <!-- 請問幾位 -->
             <div class="input-group animation a4">
-              <label id="attend" for="demo_name">出席幾位 <small id="comment">記得把自己算進去呦</small></label>
+              <label id="attend" for="people-number">幾位出席*</label>
               <input class="form-field" type="text" id="people-number" pattern="[0-9]{1,3}" required>
-              <span class="icon"></span>
             </div>
   
             <!-- 是否吃素 -->
             <div class="input-group animation a5">
-              <label>吃素的人數</label>
+              <label for="demo_vegetarian">幾位吃素*</label>
               <input class="form-field" type="text" id="demo_vegetarian" pattern="[0-9]{1,3}" required>
-              <span class="icon"></span>
             </div>
   
             <!-- 是否需要兒童椅 -->
             <div class="input-group animation a6">
-              <label>需要幾張兒童椅</label>
+              <label for="demo_child_seat">幾張兒童椅*</label>
               <input class="form-field" type="text" id="demo_child_seat" pattern="[0-9]{1,3}" required>
-              <span class="icon"></span>
             </div>
   
             <!-- 是否需要寄送喜帖 -->
             <div class="input-group animation a7">
-              <label>您想要紙本喜帖或是電子喜帖</label>
+              <label>紙本喜帖或是電子喜帖*</label>
               <div class="radio-group row">
                 <!-- 紙本喜帖 -->
                 <div class="four columns">
@@ -70,29 +65,29 @@
                   <label for="electronic">電子喜帖</label>
                 </div>
 
-                <!-- 我都要 -->
+                <!-- 都要 -->
                 <div class="four columns">
-                  <input type="radio" id="both" name="demo_invitation" value="我都要">
-                  <label for="both">我都要</label>
+                  <input type="radio" id="both" name="demo_invitation" value="都要">
+                  <label for="both">都要</label>
                 </div>
 
-                <!-- 我都不要 -->
+                <!-- 都不要 -->
                 <div class="four columns">
-                  <input type="radio" id="none" name="demo_invitation" value="我都不要">
-                  <label for="none">我都不要</label>
+                  <input type="radio" id="none" name="demo_invitation" value="都不要">
+                  <label for="none">都不要</label>
                 </div>
               </div>
             </div>
   
             <!-- 電子郵件 -->
             <div class="input-group hidden-email" id="need-electronic">
-                <label for="demo_email">聯絡Email</label>
+                <label for="demo_email">聯絡Email*</label>
                 <input class="form-field" type="email" id="demo_email">
             </div>
 
             <!-- 地址 -->
             <div class="input-group hidden-address" id="need-paper">
-                <label for="demo_address">地址</label>
+                <label for="demo_address">地址*</label>
                 <input class="form-field" type="text" id="demo_address">
             </div>
 
@@ -100,7 +95,6 @@
             <div class="input-group animation a8">
               <label for="demo_message">想對我們說的話</label>
               <input class="form-field" type="text" id="demo_message"></input>
-              <span class="icon"></span>
             </div>
             <div class="button-container">
               <button type="button" id="submit" class="animation a9">送出</button>
@@ -128,7 +122,6 @@
     </main>
   </div>
 
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
   <script src="script.js"></script>
   
 </body>

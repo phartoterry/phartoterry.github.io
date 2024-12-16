@@ -13,6 +13,7 @@ html, body, .container, .row {
 .container {
     max-width: 100%;
     height: 100%;
+
 }
 
 .half {
@@ -23,7 +24,7 @@ html, body, .container, .row {
 }
 
 .bg {
-    background: url('images/bg4.jpg') ;
+    background: url('images/bg6.jpg') ;
     background-size: cover;
     background-position: bottom center;
     background-repeat: no-repeat;
@@ -109,7 +110,7 @@ span {
     width: 150px;
     padding: 12px 10px;
     border: 0;
-    background: linear-gradient(to right, #FF0000 0%, #ff9b28 100%);
+    background: rgb(72, 179, 250);
     border-radius: 50px;
     color: #fff;
     letter-spacing: 1px;
@@ -119,12 +120,12 @@ span {
 }
 
 #submit:hover {
-    background: linear-gradient(to right, #ff9b28 0%, #FF0000 100%);
+    background: rgba(174,223,255,1);
 }
 
 #return:hover {
-    background: linear-gradient(to right, #ff9b28 0%, #FF0000 100%);
-}
+    background: rgba(174,223,255,1);
+}   
 
 
 #main-form {
@@ -301,6 +302,16 @@ input[type=url], select, textarea {
         align-items: center;
     }
 
+    #form-container {
+        margin-top: 2em;
+        margin-bottom: 4em;
+    }
+
+    #form-container {
+        margin-top: 2em;
+        margin-bottom: 4em;
+    }
+
     .bg {
         height: 100%;
         background-position: bottom center;
@@ -319,10 +330,6 @@ input[type=url], select, textarea {
 
     button {
         font-size: 14px;
-    }
-
-    .input-group {
-        margin-bottom: 0.8em;
     }
 
     #thanks-msg img {
@@ -341,6 +348,11 @@ input[type=url], select, textarea {
     .form {
         padding: 1rem;
     }
+
+    #form-container {
+        margin-top: 2em;
+        margin-bottom: 4em;
+    }
   
     span {
         font-size: 18px;
@@ -360,10 +372,6 @@ input[type=url], select, textarea {
   
     button {
         font-size: 14px;
-    }
-  
-    .input-group {
-        margin-bottom: 0.8em;
     }
   
     .radio-group .columns {
@@ -406,9 +414,7 @@ input[type=url], select, textarea {
     button {
         font-size: 14px;
     }
-    .input-group {
-        margin-bottom: 0.8em;
-    }
+    
     .radio-group .columns {
         width: 50%; /* Make radio buttons side-by-side */
         margin-left: 0;

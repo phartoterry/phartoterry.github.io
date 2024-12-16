@@ -1,152 +1,3 @@
-// function encodeFormData(data) {
-//   return Object.keys(data)
-//       .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-//       .join('&');
-// }
-
-// function validateField(field) {
-//   const id = field.id;
-//   const value = field.value.trim();
-
-//   switch (id) {
-//       case 'demo_name':
-//       case 'relation':
-//           return value.length > 0; // Allow any non-empty value
-//       case 'people-number':
-//       case 'demo_vegetarian':
-//       case 'demo_child_seat':
-//           return /^[0-9]+$/.test(value); // Allow only digits
-//       case 'demo_email':
-//         if (field.required) {
-//             return value.includes('@'); // Must include '@' if required
-//         }
-//         return value === '' || value.includes('@'); // Valid if empty or contains '@'
-//       case 'demo_address':
-//           return value.length > 0; // Non-empty for required fields
-//       default:
-//           return true;
-//   }
-// }
-
-// function validateRadioSelection() {
-//   const invitation = document.querySelector('input[name="demo_invitation"]:checked');
-//   if (!invitation) return false;
-
-//   const emailField = document.getElementById('demo_email');
-//   const addressField = document.getElementById('demo_address');
-
-//   switch (invitation.value) {
-//       case '紙本喜帖':
-//           return validateField(addressField);
-//       case '電子喜帖':
-//           return validateField(emailField);
-//       case '我都要':
-//           return validateField(addressField) && validateField(emailField); // Both are required
-//       case '我都不要':
-//           return true; // No additional validation needed
-//       default:
-//           return false;
-//   }
-// }
-
-// function updateFieldStyles(field) {
-//   if (field === document.activeElement) {
-//       field.style.borderColor = '#0f7ef1'; // Blue for focused
-//   } else if (validateField(field)) {
-//       field.style.borderColor = 'forestgreen'; // Green for valid
-//   } else {
-//       field.style.borderColor = 'firebrick'; // Red for invalid
-//   }
-// }
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   const fields = document.querySelectorAll('.form-field');
-//   const invitationRadios = document.querySelectorAll('input[name="demo_invitation"]');
-
-//   // Add focus and input event listeners for real-time validation and styling
-//   fields.forEach(field => {
-//       field.addEventListener('focus', () => updateFieldStyles(field));
-//       field.addEventListener('input', () => updateFieldStyles(field));
-//       field.addEventListener('blur', () => updateFieldStyles(field));
-//   });
-
-//   // Validate and toggle required fields based on radio selection
-//   invitationRadios.forEach(radio => {
-//       radio.addEventListener('change', function () {
-//           const emailField = document.getElementById('demo_email');
-//           const addressField = document.getElementById('demo_address');
-//           document.getElementById('need-paper').classList.toggle('hidden-address', radio.id !== 'paper' && radio.id !== 'both');
-//           document.getElementById('need-electronic').classList.toggle('hidden-email', radio.id !== 'electronic' && radio.id !== 'both');
-
-//           if (radio.id === 'paper') {
-//               addressField.required = true;
-//               emailField.required = false;
-//           } else if (radio.id === 'electronic') {
-//               addressField.required = false;
-//               emailField.required = true;
-//           } else if (radio.id === 'both') {
-//               addressField.required = true;
-//               emailField.required = true;
-//           } else {
-//               addressField.required = false;
-//               emailField.required = false;
-//           }
-//       });
-//   });
-
-//   document.getElementById('submit').addEventListener('click', function (event) {
-//       const allValid = Array.from(fields).every(field => validateField(field)) && validateRadioSelection();
-
-//       if (!allValid) {
-//           alert('請檢查表單內容是否正確');
-//           event.preventDefault();
-//           return;
-//       }
-
-//       // Show loader animation
-//       document.getElementById('main-form').classList.add('hidden');
-//       document.getElementById('title').classList.add('hidden');
-//       document.getElementById('submit').classList.add('hidden');
-//       document.getElementById('loader').classList.remove('hidden');
-//       document.getElementById('thanks-msg').classList.remove('hidden');
-//       document.getElementById('success').classList.remove('hidden');
-
-//       // Gather form data
-//       const data = {
-//           'entry.2011968773': document.getElementById('demo_name').value.trim(),
-//           'entry.1537783585': document.getElementById('relation').value.trim(),
-//           'entry.999905413': document.getElementById('people-number').value.trim(),
-//           'entry.1476509680': document.getElementById('demo_vegetarian').value.trim(),
-//           'entry.1197285354': document.getElementById('demo_child_seat').value.trim(),
-//           'entry.1953885259': document.getElementById('demo_email').value.trim(),
-//           'entry.589875455': document.getElementById('demo_address').value.trim(),
-//           'entry.686852954': document.getElementById('demo_message').value.trim(),
-//           'entry.955700446': document.querySelector('input[name=\"demo_invitation\"]:checked')?.value || '未填寫'
-//       };
-
-//       // Send the data using fetch
-//       fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSeyaMygKukmQTOcMA9hhXEOJse9a3lKdGAVSL2fXop38rDEOA/formResponse', {
-//           method: 'POST',
-//           headers: {
-//               'Content-Type': 'application/x-www-form-urlencoded'
-//           },
-//           body: encodeFormData(data)
-//       }).then(response => {
-//           if (response.ok) {
-//               console.log('Submission successful!');
-//           } else {
-//               console.error('Failed to submit:', response.status);
-//           }
-//       }).catch(error => console.error('Error:', error));
-//   });
-// });
-
-
-
-
-
-
-
 
 function encodeFormData(data) {
   return Object.keys(data)
@@ -193,9 +44,9 @@ function validateRadioSelection() {
           return validateField(addressField);
       case '電子喜帖':
           return validateField(emailField);
-      case '我都要':
+      case '都要':
           return validateField(addressField) && validateField(emailField); // Both are required
-      case '我都不要':
+      case '都不要':
           return true; // No additional validation needed
       default:
           return false;
@@ -229,6 +80,14 @@ document.addEventListener('DOMContentLoaded', function () {
       radio.addEventListener('change', function () {
           const emailField = document.getElementById('demo_email');
           const addressField = document.getElementById('demo_address');
+
+          emailField.value = '';
+          addressField.value = '';
+
+          // Reset email and address field border colors
+          emailField.style.borderColor = '#ddd';
+          addressField.style.borderColor = '#ddd';
+
           document.getElementById('need-paper').classList.toggle('hidden-address', radio.id !== 'paper' && radio.id !== 'both');
           document.getElementById('need-electronic').classList.toggle('hidden-email', radio.id !== 'electronic' && radio.id !== 'both');
 
@@ -268,19 +127,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Gather form data
     const data = {
-      'entry.2011968773': document.getElementById('demo_name').value.trim(),
-      'entry.1537783585': document.getElementById('relation').value.trim(),
-      'entry.999905413': document.getElementById('people-number').value.trim(),
-      'entry.1476509680': document.getElementById('demo_vegetarian').value.trim(),
-      'entry.1197285354': document.getElementById('demo_child_seat').value.trim(),
-      'entry.1953885259': document.getElementById('demo_email').value.trim(),
-      'entry.589875455': document.getElementById('demo_address').value.trim(),
-      'entry.686852954': document.getElementById('demo_message').value.trim(),
-      'entry.955700446': document.querySelector('input[name=\"demo_invitation\"]:checked')?.value || '未填寫'
+      'entry.826151329': document.getElementById('demo_name').value.trim(),
+      'entry.1885566535': document.getElementById('relation').value.trim(),
+      'entry.1749820725': document.getElementById('people-number').value.trim(),
+      'entry.1204783302': document.getElementById('demo_vegetarian').value.trim(),
+      'entry.214182809': document.getElementById('demo_child_seat').value.trim(),
+      'entry.143865939': document.getElementById('demo_email').value.trim(),
+      'entry.1840319126': document.getElementById('demo_address').value.trim(),
+      'entry.728572343': document.getElementById('demo_message').value.trim(),
+      'entry.881111873': document.querySelector('input[name=\"demo_invitation\"]:checked')?.value || '未填寫'
     };
 
     // Send the data using fetch
-    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSeyaMygKukmQTOcMA9hhXEOJse9a3lKdGAVSL2fXop38rDEOA/formResponse', {
+    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSe84JXLpaA166UxkcTFAGIp6LNLxVaFlSH6oRM-1fd-E4qD7Q/formResponse', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
